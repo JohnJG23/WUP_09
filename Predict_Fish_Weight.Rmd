@@ -27,7 +27,7 @@ Fish <-read.csv(file="Fish.csv",header=TRUE)
 ## Perch
 
 ```{r}
-Perch <- filter(fish, Species=="Perch")
+Perch <- filter(Fish, Species=="Perch")
 Perch <- select(Perch, -(Species))
 ```
 
@@ -57,10 +57,22 @@ best.model <- lm(Weight~Height+Width,data=Perch)
 summary(best.model)
 ``` 
 
-The best model and the best Two regressor model is the same answer. 
+The best model and the best Two regressor model is the same answer.  
+
+```{r}
+best_Perch_Model <- lm(Weight~Height+Width,data=Perch)
+five_element_perch_model <- lm(Weight~.,data=Perch)
+anova(best_Perch_Model, one_perch_model)
+```
+
+This analysis of Variance represents how the Two element model is most likely to be significant. That is why there is not much diffrence when comparing it agains a five element model 
+
 ## Pike
 
 ### Best Models
+
+
+
 
 ### Best Two regressor model
 
