@@ -90,6 +90,8 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="topleft",main="Adjusted R^2")
 ```
 
+These response's from the r command displays the best model of the data used for predicting pike fish weight. The subset size is the x axis and the statistic adjusted R-squared value is the y axis. The legend communicates what the highest plot "L1-L2-L3-H-W" stands for. The plot is significant because it is the best model for the pike prediction. That is why it appears above all of the others. Where the adjusted r square value is 0.975.     
+
 ### Best Two regressor model
 ```{r}
 Pike_best.model <- lm(Weight~.,data=Pike)
