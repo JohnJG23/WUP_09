@@ -57,7 +57,7 @@ best.model <- lm(Weight~Height+Width,data=Perch)
 summary(best.model)
 ``` 
 
-The best model and the best Two regressor model is the same answer. That is why in the fist command we get the height and width at the top of the graph.    
+The models above are a representation of the best model and the best Two regressor mode. That is we see that height and width at the top of the graph. Where the adjusted r square value is 0.940.       
 
 ```{r}
 best_Perch_Model <- lm(Weight~Height+Width,data=Perch)
@@ -65,7 +65,7 @@ five_element_perch_model <- lm(Weight~.,data=Perch)
 anova(best_Perch_Model, five_element_perch_model)
 ```
 
-This analysis of Variance represents how the Two element model is most likely to be significant. That is why there is not much difference when comparing it against a five element model.      
+This analysis of Variance represents how the Two element model is most likely to be significant. That is why there is not much difference when comparing its values for the RSS value against a five element model. Where model 1 which is going from height and width is 384478 and model 2 which is going from Length1, Length3, Length3, Hight, and Width is 379369.       
 
 ## Pike
 ```{r}
