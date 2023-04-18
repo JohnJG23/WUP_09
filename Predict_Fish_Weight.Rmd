@@ -107,7 +107,7 @@ Pike_best_2_R_Model <-lm(Weight~Length1+Length3, data=Pike)
 anova(Pike_best.model, Pike_best_2_R_Model)
 ```
 
-when we use anavo it comes up with a p value that is .0 and is comparing both models and since the p value isj lower than . 05 we conclude that it is significant below the .05 level. 
+when we use anavo it comes up with a p value that is .03 and is comparing both models and since the p value is lower than . 05 we conclude that it is significant below the .05 level.  
 
 
 ## Roach
@@ -138,5 +138,20 @@ above 1 is the best 1 element and above 2 is the best 2 element, above the three
 
 
 ### Best Two regressor model
+```{r}
+Roach_best_model <- lm(Weight~Length3+Width,data=Roach)
+summary(Roach_best_model)
+```
+
+the roach best model description
+
+
+```{r}
+Roach_best_model <- lm(Weight~Length3+Width,data=Roach)
+five_element_Roach_model <- lm(Weight~.,data=Roach)
+anova(Roach_best_model, five_element_Roach_model)
+```
+
+were comparing the best roch model with the five element roach model, the comparison results in a p value of .9, the rss in the 5 element model is slightly smaller but not a significant diffrence, anova says comparing these two modeles togther results in no statistic difrence. 
 
 ## Final Summary Statements
