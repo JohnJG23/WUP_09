@@ -134,6 +134,8 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomleft",main="Adjusted R^2")
 ```
 
+above 1 is the best 1 element and above 2 is the best 2 element, above the three is the best 3 element model and so on.. acording to the graph the best model is the 2 element model since its above the rest models. this is like the perch since the best element model is a 2 element model next   
+
 
 ### Best Two regressor model
 
