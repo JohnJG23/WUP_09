@@ -112,6 +112,11 @@ when we use anavo it comes up with a p value that is .0 and is comparing both mo
 
 ## Roach
 
+```{r}
+Roach <- filter(Fish, Species=="Roach")
+Roach <- select(Roach, -(Species))
+```
+
 ### Best Models
 
 ### Best Two regressor model
