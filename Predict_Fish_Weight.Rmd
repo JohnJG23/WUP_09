@@ -99,12 +99,16 @@ summary(Pike_best.model)
 Pike_best_2_R_Model <-lm(Weight~Length1+Length3, data=Pike)
 ``` 
 
+ created several models through the automated process. compare the best 2 element model to the one that has everyhting iin it.  
 
 ```{r}
 Pike_best.model <- lm(Weight~.,data=Pike)
 Pike_best_2_R_Model <-lm(Weight~Length1+Length3, data=Pike)
 anova(Pike_best.model, Pike_best_2_R_Model)
 ```
+
+when we use anavo it comes up with a p value that is .0 and is comparing both models and since the p value isj lower than . 05 we conclude that it is significant below the .05 level. 
+
 
 ## Roach
 
