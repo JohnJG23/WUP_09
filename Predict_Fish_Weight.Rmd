@@ -31,7 +31,6 @@ Perch <- filter(Fish, Species=="Perch")
 Perch <- select(Perch, -(Species))
 ```
 
-
 ### Best Models
 
 ```{r}
@@ -57,7 +56,7 @@ best.model <- lm(Weight~Height+Width,data=Perch)
 summary(best.model)
 ``` 
 
-The models above are a representation of the best model and the best Two regressor mode. That is we see that height and width at the top of the graph. Where the adjusted r square value is 0.940.       
+The models above are created by the r command to communicate how to predict a Perch's weight. When we generate the fist graph we can find out that for this fish the best model is also our best two regressor model. So we went ahead to the next command under "Best Two regressor model" and find out that the 2 element model is using the statistical differences between the factors that make up a prediction of Perch fish weight. That is why we see that height and width are at the top of the first command. Where the adjusted r square value is 0.940 on the y axis and our best and best two regressor model is plotted there for the 2nd value of the x axis.       
 
 ```{r}
 best_Perch_Model <- lm(Weight~Height+Width,data=Perch)
@@ -65,7 +64,7 @@ five_element_perch_model <- lm(Weight~.,data=Perch)
 anova(best_Perch_Model, five_element_perch_model)
 ```
 
-This analysis of Variance represents how the Two element model is most likely to be significant. That is why there is not much difference when comparing its values for the RSS value against a five element model. Where model 1 which is going from height and width is 384478 and model 2 which is going from Length1, Length3, Length3, Hight, and Width is 379369.       
+This analysis of Variance represents how the two element model is most likely to be significant. That is why there is not much difference when comparing its values for the RSS value against a five element model. Where model 1 which is going from height and width is 384478 and model 2 which is going from Length1, Length2, Length3, Height, and Width is 379369.       
 
 ## Pike
 ```{r}
@@ -90,7 +89,7 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="topleft",main="Adjusted R^2")
 ```
 
-These response's from the r command displays the best model of the data used for predicting pike fish weight. The subset size is the x axis and the statistic adjusted R-squared value is the y axis. The legend communicates what the highest plot "L1-L2-L3-H-W" stands for. The plot is significant because it is the best model for the pike prediction. That is why it appears above all of the others. Where the adjusted r square value is 0.975.     
+These response's from the r command displays the best model of the data used for predicting Pike fish weight. The subset size is the x axis and the statistic adjusted R-squared value is the y axis. The legend communicates what the highest plot "L1-L2-L3-H-W" stands for. The plot is significant because it is the best model for the pike prediction. That is why it appears above all of the others. Where the adjusted r square value is 0.975.     
 
 ### Best Two regressor model
 ```{r}
@@ -99,7 +98,7 @@ summary(Pike_best.model)
 Pike_best_2_R_Model <-lm(Weight~Length1+Length3, data=Pike)
 ``` 
 
- created several models through the automated process. compare the best 2 element model to the one that has everyhting iin it.  
+This r code will create several models through the automated process. The factors that make up the 2 element model and the 5 element model is in this table. The 2 element model in comparison to the 5 element model has a less likely chance of predicting the Pike's weight.      
 
 ```{r}
 Pike_best.model <- lm(Weight~.,data=Pike)
@@ -107,8 +106,7 @@ Pike_best_2_R_Model <-lm(Weight~Length1+Length3, data=Pike)
 anova(Pike_best.model, Pike_best_2_R_Model)
 ```
 
-when we use anavo it comes up with a p value that is .03 and is comparing both models and since the p value is lower than . 05 we conclude that it is significant below the .05 level.  
-
+The anova response generates the analysis we are looking for so that we can examine our hypothesis. When we use anova we learn that the p value is .03091 and conclude that it is significant below the .05 level. The anova response is comparing the best model and the 2 element model and that is why for model 1 it has all elements to predict Pike weight and model 2 has just 2 elemnts to precict.  
 
 ## Roach
 
@@ -134,7 +132,7 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomleft",main="Adjusted R^2")
 ```
 
-above 1 is the best 1 element and above 2 is the best 2 element, above the three is the best 3 element model and so on.. acording to the graph the best model is the 2 element model since its above the rest models. this is like the perch since the best element model is a 2 element model next   
+For this fish we got the data from the files and the r command generated how the best prediction can be made. In agreement with the graph the best model is the 2 element model since its above the rest of the models. This is like the perch results since the best element model is a 2 element model, and here above 1 is the best 1 element and above 2 is the best 2 element, above the three is the best 3 element model and so on.     
 
 
 ### Best Two regressor model
@@ -143,8 +141,7 @@ Roach_best_model <- lm(Weight~Length3+Width,data=Roach)
 summary(Roach_best_model)
 ```
 
-the roach best model description
-
+Similarly to the Perch the methods to predict weight for Roach fish is above. The table created displays the main components to predict weight wich are Length3 and Width. Since the best model is the best 2 element model that means that we will always uses the two factors Length3 and Width to predict Roach weight. That is why we see that height and width are at the top of the first command. Where the adjusted r square value is the greatest on the y axis and our best and best two regressor model is plotted there for the 2nd value of the x axis.
 
 ```{r}
 Roach_best_model <- lm(Weight~Length3+Width,data=Roach)
@@ -152,6 +149,8 @@ five_element_Roach_model <- lm(Weight~.,data=Roach)
 anova(Roach_best_model, five_element_Roach_model)
 ```
 
-were comparing the best roch model with the five element roach model, the comparison results in a p value of .9, the rss in the 5 element model is slightly smaller but not a significant diffrence, anova says comparing these two modeles togther results in no statistic difrence. 
+This analysis of Variance represents comparing these two models together results in no statistic difference. That is why there is not much difference when comparing its values for the RSS value against a five element model. Where model 1 which is going from Length3 and Width is 20368 and model 2 which is going from Length1, Length2, Length3, Hight, and Width is 19771.  
 
 ## Final Summary Statements
+
+Interestingly to predict the weight of fish there is many factors to take into consideration. In fact there are particular instance's in which less is more and highly preferred in comparison to alternative instance's. For instance like in the beginning of this exercise we went through the Perch data in order to find the best way to predict these fish weights. The automated responses advised us about the best model, best two regressor model, and when running the anova test with these results, the outcomes were notable. The preferred method of making a Perch weight prediction was just taking into consideration a 2 element model because there was not a significant difference between the 2 element model and 5 element model. Next for the Pike fish we went through the Pike data in order to find the best way to predict these fish weights. The automated generated responses advised us about the best model, best two regressor model, and when running the anova test with these results, the outcomes were notable. When we use anova we learn that the p value is .03091 and conclude that it is significant below the .05 level and that the 5 element mmodel has a significant lower RSS score than the 2 element model. Finally for the Roach fish we went through the Roach data in order to find the best way to predict these fish weights. Similar to the first fish the automated responses advised us about the best model, best two regressor model, and when running the anova test with these results, the outcomes were notable. The preferred method of making a Roach weight prediction was just taking into consideration a 2 element model because there was not a significant difference between the 2 element model and 5 element model.              
